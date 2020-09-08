@@ -1,0 +1,9 @@
+.emacs.desktop
+.emacs.desktop.lock
+recentf
+smex-items
+elpa/
+url/
+*~
+tmp*
+\#*\#
