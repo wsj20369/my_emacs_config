@@ -68,6 +68,10 @@
 ;; 场景恢复
 (desktop-save-mode 1)
 
+;; 新的Buffer直接覆盖当前窗口, 不要split新的出来
+(add-to-list 'display-buffer-alist
+	     `(".*" (display-buffer-reuse-window display-buffer-same-window)))
+
 ;; 总是加载最新的文件
 (setq load-prefer-newer t)
 
