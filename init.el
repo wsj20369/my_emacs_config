@@ -150,3 +150,9 @@
   :ensure t
   :config
   )
+
+;; Json编辑模式
+(use-package json-mode
+  :ensure t
+  :config
+  )
