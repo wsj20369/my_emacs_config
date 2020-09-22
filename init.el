@@ -34,6 +34,9 @@
 
 ;; 行 高亮
 (global-hl-line-mode 1)
+(set-face-background 'hl-line "blue")
+(set-face-foreground 'highlight "gray")
+;; (set-face-foreground 'highlight nil)
 
 ;; 时间格式
 (display-time-mode 1)
