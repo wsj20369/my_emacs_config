@@ -153,3 +153,26 @@
   :ensure t
   :config
   )
+
+;; Json编辑模式
+(use-package json-mode
+  :ensure t
+  :config
+  )
+
+;; 切换 major-mode 的命令
+;; 拷贝自: Elisp入门(叶文彬著)
+(defvar switch-major-mode-history nil)
+(defun switch-major-mode (mode)
+  (interactive
+   (list
+    (intern
+     (completing-read "Switch to mode: "
+		      obarray (lambda (s)
+				(and (fboundp s)
+				     (string-match "-mode$" (symbol-name s))))
+		      t nil 'switch-major-mode-history))))
+  (setq switch-major-mode-history
+	(cons (symbol-name major-mode) switch-major-mode-history))
+  (funcall mode))
+(put 'narrow-to-region 'disabled nil)
