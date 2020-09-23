@@ -105,7 +105,7 @@
    company-idle-delay 0
    company-minimum-prefix-length 4)
   :config
-  (global-company-mode))
+  (global-company-mode 1))
 
 ;; 按键提示
 (use-package which-key
