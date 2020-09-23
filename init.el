@@ -12,7 +12,7 @@
  '(org-agenda-files (quote ("f:/OrgMode/GTD.org")))
  '(package-selected-packages
    (quote
-    (vimrc-mode evil-nerd-commenter evil which-key youdao-dictionary rainbow-delimiters company use-package))))
+    (helm smex json-mode vimrc-mode evil-nerd-commenter evil which-key youdao-dictionary rainbow-delimiters company use-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -106,6 +106,20 @@
    company-minimum-prefix-length 4)
   :config
   (global-company-mode 1))
+
+;; Ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-everywhere t)
+(ido-mode t)
+
+;; Helm
+(use-package helm
+  :ensure t
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+         ([f10] . helm-buffers-list)
+         ([S-f10] . helm-recentf)))
 
 ;; 按键提示
 (use-package which-key
