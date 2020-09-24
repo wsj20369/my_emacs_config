@@ -174,6 +174,12 @@
   :config
   )
 
+;; Magit
+(use-package magit
+  :ensure t
+  :config
+  )
+
 ;; 切换 major-mode 的命令
 ;; 拷贝自: Elisp入门(叶文彬著)
 (defvar switch-major-mode-history nil)
