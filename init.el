@@ -190,3 +190,14 @@
 	(cons (symbol-name major-mode) switch-major-mode-history))
   (funcall mode))
 (put 'narrow-to-region 'disabled nil)
+
+;; 编程: C语言缩进
+(add-hook 'c-mode-hook
+	  (lambda ()
+	    (setq c-default-style
+		  '((java-mode . "java")
+		    (awk-mode . "awk")
+		    (other . "linux")))
+	    (setq c-basic-offset 8)
+	    (setq tab-width 8)
+	    (setq backward-delete-char-untabify-method nil)))
