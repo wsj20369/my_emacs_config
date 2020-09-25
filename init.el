@@ -71,9 +71,13 @@
 ;; 场景恢复
 (desktop-save-mode 1)
 
-;; 新的Buffer直接覆盖当前窗口, 不要split新的出来
+;; 新建窗口的规则:
+;;   Helm相关的: 建立新的Buffer并显示在屏幕下方
+;;   其它的:     新的Buffer直接覆盖当前窗口, 不要split新的出来
 (add-to-list 'display-buffer-alist
 	     `(".*" (display-buffer-reuse-window display-buffer-same-window)))
+(add-to-list 'display-buffer-alist
+	     `(".*helm.*" (display-buffer-at-bottom display-buffer-pop-up-window)))
 
 ;; 总是加载最新的文件
 (setq load-prefer-newer t)
@@ -111,15 +115,16 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-filename-at-point 'guess)
 (setq ido-everywhere t)
-(ido-mode t)
+(ido-mode 0)
 
 ;; Helm
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
+         ("C-x b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
-         ([f10] . helm-buffers-list)
-         ([S-f10] . helm-recentf)))
+         ([f10] . helm-recentf))
+  )
 
 ;; 按键提示
 (use-package which-key
