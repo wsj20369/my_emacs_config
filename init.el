@@ -37,6 +37,8 @@
 (set-face-background 'hl-line "blue")
 (set-face-foreground 'highlight "gray")
 ;; (set-face-foreground 'highlight nil)
+(set-face-background 'region "green")
+(set-face-foreground 'region "black")
 
 ;; 时间格式
 (display-time-mode 1)
@@ -124,6 +126,9 @@
          ("C-x b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
          ([f10] . helm-recentf))
+  :config
+    (set-face-background 'helm-selection "blue")
+    (set-face-foreground 'helm-selection "gray")
   )
 
 ;; 按键提示
