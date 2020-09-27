@@ -40,6 +40,15 @@
 (set-face-background 'region "green")
 (set-face-foreground 'region "black")
 
+;; 显示行列坐标在Mode line
+(line-number-mode 1)
+(column-number-mode 1)
+
+;; 显示相对行号
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-current-absolute t)
+
 ;; 时间格式
 (display-time-mode 1)
 (setq display-time-24hr-format t)
