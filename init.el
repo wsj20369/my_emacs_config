@@ -226,3 +226,11 @@
 	    (setq c-basic-offset 8)
 	    (setq tab-width 8)
 	    (setq backward-delete-char-untabify-method nil)))
+
+;; 平滑滚动
+(use-package smooth-scrolling
+  :ensure t
+  :config
+  (smooth-scrolling-mode 1)
+  (setq smooth-scroll-margin 2)
+)
