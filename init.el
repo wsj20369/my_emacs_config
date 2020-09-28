@@ -253,3 +253,18 @@
   :config
   (winum-mode 1)
 )
+
+;; 美化Modeline, 不显示特殊的Icon
+;;   GUI与Terminal是一致的效果
+(use-package doom-modeline
+  :ensure t
+  :defer t
+  :hook
+  (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-icon nil)
+  (doom-modeline-major-mode-icon nil)
+  (doom-modeline-minor-modes nil)
+  :config
+  (line-number-mode 0)
+  (column-number-mode 0))
