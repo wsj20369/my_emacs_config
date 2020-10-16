@@ -67,5 +67,10 @@
 (add-to-list 'display-buffer-alist
 	     `(".*helm.*" (display-buffer-at-bottom display-buffer-pop-up-window)))
 
+;; GDB相关
+;;   GDB打开时，以多窗口显示
+(setq-default gdb-many-windows t)
+
+;;;
 (provide 'basic-settings)
 
