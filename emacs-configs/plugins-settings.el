@@ -167,7 +167,7 @@
   (doom-modeline-major-mode-icon nil)
   (doom-modeline-minor-modes nil)
   :config
-  (line-number-mode 0)
+  (line-number-mode 1)
   (column-number-mode 0))
 
 ;;;
