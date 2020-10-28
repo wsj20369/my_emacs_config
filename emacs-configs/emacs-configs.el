@@ -15,6 +15,9 @@
 ;; 各种插件
 (require 'plugins-settings)
 
+;; OrgMode设定
+(require 'orgmode-settings)
+
 ;;;
 (provide 'emacs-configs)
 
