@@ -13,9 +13,9 @@
 (column-number-mode 1)
 
 ;; 显示相对行号
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type t) ;; 'relative)
 (setq display-line-numbers-current-absolute t)
+(global-display-line-numbers-mode 1)
 
 ;; 时间格式
 (display-time-mode 1)
