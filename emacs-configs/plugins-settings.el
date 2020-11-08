@@ -186,6 +186,13 @@
   (line-number-mode 1)
   (column-number-mode 0))
 
+;; 窗口透明度
+(use-package transwin
+  :ensure t
+  :config
+  (transwin--set-transparency 99)
+  )
+
 ;;;
 (provide 'plugins-settings)
 
