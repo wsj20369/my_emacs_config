@@ -92,6 +92,12 @@
 	counsel-pt-base-command "pt -zS --nocolor --nogroup -e %s")
   )
 
+;; 更好的搜索, 大纲显示搜索结果
+(use-package swiper
+  :ensure t
+  :defer 1
+  :bind ("C-s" . swiper))
+
 ;; 按键提示
 (use-package which-key
   :ensure t
