@@ -31,6 +31,7 @@
 
 ;; Helm
 (use-package helm
+  :disabled
   :ensure t
   :bind (("M-x" . helm-M-x)
          ("C-x b" . helm-buffers-list)
@@ -39,6 +40,56 @@
   :config
     (set-face-background 'helm-selection "blue")
     (set-face-foreground 'helm-selection "gray")
+  )
+
+;; Ivy+Counsel: 与Helm类似，更轻量，风格也好适合我
+(use-package ivy
+  :ensure t
+  :defer 1
+  :bind
+  ([remap switch-to-buffer] . #'ivy-switch-buffer)
+  :config
+  (setq ivy-initial-inputs-alist nil
+	ivy-wrap t
+	ivy-height 15
+	ivy-fixed-height-minibuffer t
+	ivy-format-function #'ivy-format-function-line
+	)
+  (ivy-mode +1)
+  )
+
+(use-package ivy-posframe
+  :ensure t
+  :defer 1
+  :after (ivy)
+  :config
+  (setq ivy-display-function #'ivy-posframe-display-at-point
+	ivy-fixed-height-minibuffer nil
+	ivy-posframe-parameters
+	`((min-width . 90)
+	  (min-height .,ivy-height)
+	  (internal-border-width . 10)))
+  )
+
+(use-package counsel
+  :ensure t
+  :defer 1
+  :after (ivy)
+  :bind (([remap execute-extended-command] . counsel-M-x)
+	 ([remap find-file]                . counsel-find-file)
+	 ([remap find-library]             . find-library)
+	 ([remap imenu]                    . counsel-imenu)
+	 ([remap recentf-open-files]       . counsel-recentf)
+	 ([remap org-capture]              . counsel-org-capture)
+	 ([remape swiper]                  . counsel-grep-or-swiper)
+	 ([remap describe-face]            . counsel-describe-face)
+	 ([remap describe-function]        . counsel-describe-function)
+	 ([remap describe-variable]        . counsel-describe-variable))
+  :config
+  (setq counsel-find-file-ignore-regexp "\\(?:^[#.]\\)\\|\\(?:[#~]$\\)\\|\\(?:^Icon?\\)"
+	counsel-rg-base-command "rg -zS --no-heading --line-number --color never %s ."
+	counsel-ag-base-command "ag -zS --nocolor --nogroup %s"
+	counsel-pt-base-command "pt -zS --nocolor --nogroup -e %s")
   )
 
 ;; 按键提示
