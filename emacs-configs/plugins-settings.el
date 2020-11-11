@@ -108,6 +108,14 @@
   (ivy-rich-mode 1)
   )
 
+;; Avy: 快速跳转，快速拷贝
+(use-package avy
+  :ensure t
+  :bind (("C-c g" . avy-goto-line)
+	 ("C-c l" . avy-copy-line)
+	 ("C-c r" . avy-copy-region))
+  )
+
 ;; 更好的搜索, 大纲显示搜索结果
 (use-package swiper
   :ensure t
