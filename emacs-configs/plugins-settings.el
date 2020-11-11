@@ -42,7 +42,7 @@
     (set-face-foreground 'helm-selection "gray")
   )
 
-;; Ivy+Counsel: 与Helm类似，更轻量，风格也好适合我
+;; Ivy+Counsel: 与Helm类似，更轻量，风格也更适合我
 (use-package ivy
   :ensure t
   :defer 1
@@ -64,11 +64,19 @@
   :after (ivy)
   :config
   (setq ivy-display-function #'ivy-posframe-display-at-point
-	ivy-fixed-height-minibuffer nil
-	ivy-posframe-parameters
-	`((min-width . 90)
-	  (min-height .,ivy-height)
-	  (internal-border-width . 10)))
+	ivy-fixed-height-minibuffer nil)
+  (setq ivy-posframe-parameters
+	`((min-width . 60)
+	  (min-height . ,ivy-height)
+	  (bg-color . red)
+	  (internal-border-width . 2)))
+  (setq ivy-posframe-display-functions-alist
+	'((swiper              . ivy-display-function-fallback)
+	  (complete-symbol     . ivy-posframe-display-at-point)
+	  (counsel-M-x         . ivy-posframe-display-at-frame-center)
+	  (counsel-find-file   . ivy-posframe-display-at-frame-center)
+	  (ivy-switch-buffer   . ivy-posframe-display-at-frame-center)
+	  (t                   . ivy-posframe-display-at-frame-center)))
   )
 
 (use-package counsel
@@ -81,7 +89,7 @@
 	 ([remap imenu]                    . counsel-imenu)
 	 ([remap recentf-open-files]       . counsel-recentf)
 	 ([remap org-capture]              . counsel-org-capture)
-	 ([remape swiper]                  . counsel-grep-or-swiper)
+	 ([remap swiper]                   . counsel-grep-or-swiper)
 	 ([remap describe-face]            . counsel-describe-face)
 	 ([remap describe-function]        . counsel-describe-function)
 	 ([remap describe-variable]        . counsel-describe-variable))
@@ -90,6 +98,14 @@
 	counsel-rg-base-command "rg -zS --no-heading --line-number --color never %s ."
 	counsel-ag-base-command "ag -zS --nocolor --nogroup %s"
 	counsel-pt-base-command "pt -zS --nocolor --nogroup -e %s")
+  )
+
+(use-package ivy-rich
+  :ensure t
+  :defer 1
+  :after (ivy)
+  :config
+  (ivy-rich-mode 1)
   )
 
 ;; 更好的搜索, 大纲显示搜索结果
