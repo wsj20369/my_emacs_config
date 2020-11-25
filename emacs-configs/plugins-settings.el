@@ -295,6 +295,10 @@
   (transwin--set-transparency 99)
   )
 
+;; Markdown mode
+(use-package markdown-mode
+  :ensure t)
+
 ;;;
 (provide 'plugins-settings)
 
