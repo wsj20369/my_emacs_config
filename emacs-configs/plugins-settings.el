@@ -214,6 +214,25 @@
   (funcall mode))
 (put 'narrow-to-region 'disabled nil)
 
+;; 函数定义与引用的跳转
+;; 1. 先安装gnu global: apt-get install global
+;; 2. 在源码目录执行:   gtags
+;;    会生成3个文件:  GPATH GRTAGS GTAGS
+;; 3. M-x ggtags-mode
+;;    C/C++模式下会自动打开
+(use-package ggtags
+  :ensure t
+  :bind
+  (("C-]" . ggtags-find-definition)
+   ("M-]" . ggtags-find-reference)
+   ([f12] . ggtags-update-tags))
+  :config
+  (add-hook 'c-mode-common-hook
+	    (lambda ()
+	      (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+		(ggtags-mode 1))))
+  )
+
 ;; 编程: C语言缩进
 (add-hook 'c-mode-hook
 	  (lambda ()
@@ -231,7 +250,9 @@
   :config
   (smooth-scrolling-mode 1)
   (setq smooth-scroll-margin 2)
-)
+  (add-hook 'ggtags-global-mode-hook
+	    (lambda () (setq-local smooth-scroll-margin 1)))
+  )
 
 ;; 窗口管理
 (use-package winum
