@@ -8,3 +8,6 @@ Supporting Both GUI and terminal (I tested under Windows 10 and Ubuntu 18.04 ter
 
 git clone https://github.com/wsj20369/my_emacs_config.git ~/.emacs.d
 
+# About Evil
+
+You can use the 'C-z' to switch Emacs mode / Vim mode

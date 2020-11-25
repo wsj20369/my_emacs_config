@@ -1,7 +1,23 @@
+;; 读代码时，进到XREF-mode后，将Enter键映射到打开xref-goto-xref
+;; 这只是适用于Evil模式，因为Emacs本来就是设好的
+(defun evil-ret--do-xref-in-xref(&optional COUNT)
+  (interactive)
+  (if (string= (buffer-name) "*xref*")
+      (xref-goto-xref COUNT)
+    (evil-ret COUNT)
+    )
+  )
+
+;; 如果不想用Evil, 把下面加入:disbled即可
 (use-package evil
   :ensure t
   :config
   (evil-mode 1)
+  (add-hook 'xref--xref-buffer-mode-hook
+	    (lambda ()
+	      (define-key evil-motion-state-map (kbd "RET") 'evil-ret--do-xref-in-xref)
+	      (define-key evil-motion-state-map (kbd "<return>") 'evil-ret--do-xref-in-xref)
+	      ))
   )
 
 (use-package evil-nerd-commenter
@@ -209,22 +225,6 @@
 	    (setq tab-width 8)
 	    (setq backward-delete-char-untabify-method nil)))
 
-;; 读代码时，进到XREF-mode后，将Enter键映射到打开xref-goto-xref
-;; 这只是适用于Evil模式，因为Emacs本来就是设好的
-(defun evil-ret--do-xref-in-xref(&optional COUNT)
-  (interactive)
-  (if (string= (buffer-name) "*xref*")
-      (xref-goto-xref COUNT)
-    (evil-ret COUNT)
-    )
-  )
-
-(add-hook 'xref--xref-buffer-mode-hook
-  (lambda ()
-    (define-key evil-motion-state-map (kbd "RET") 'evil-ret--do-xref-in-xref)
-    (define-key evil-motion-state-map (kbd "<return>") 'evil-ret--do-xref-in-xref)
-    ))
-
 ;; 平滑滚动
 (use-package smooth-scrolling
   :ensure t
@@ -247,10 +247,10 @@
 	 ("M-7" . winum-select-window-7)
 	 ("M-8" . winum-select-window-8)
 	 ("M-9" . winum-select-window-9)
-  )
+	 )
   :config
   (winum-mode 1)
-)
+  )
 
 ;; 美化Modeline, 不显示特殊的Icon
 ;;   GUI与Terminal是一致的效果
