@@ -12,16 +12,15 @@ git clone https://github.com/wsj20369/my_emacs_config.git ~/.emacs.d
 
 You can use the 'C-z' to switch Emacs mode / Vim mode
 
-# About ggtags, Browse C/C++ code in Emacs
+# About ggtags
+Help to browse C/C++ code in Emacs
 
 ## Prepare
-1. Install gnu global: apt-get install global
-2. In project root: gtags
-   which will generate 3 file: GPATH GRTAGS GTAGS
-3. M-x ggtags-mode
-   ggtags-mode will auto enabled in C/C++ mode
+1. Install gnu global: `apt-get install global`
+2. In project root: `gtags`, which will generate 3 file: GPATH GRTAGS GTAGS
+3. In Emacs: `M-x ggtags-mode` (ggtags-mode will auto enabled in C/C++ mode)
 
 ## Key bindings:
-   C-]    ggtags-find-definition
-   M-]    ggtags-find-reference
-   f12    ggtags-update-tags
+1. C-]    ggtags-find-definition
+2. M-]    ggtags-find-reference
+3. F12    ggtags-update-tags
