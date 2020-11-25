@@ -138,6 +138,29 @@
   :defer 1
   :bind ("C-s" . swiper))
 
+;; 在工程范围搜索文件
+(use-package projectile
+  :ensure t
+  :defer 1
+  :config
+  (projectile-mode 1)
+  (setq projectile-enable-caching t)
+  )
+
+(use-package counsel-projectile
+  :ensure t
+  :after projectile
+  :bind (([f6] . counsel-projectile-find-file)
+	 ([remap projectile-find-file]        . counsel-projectile-find-file)
+	 ([remap projectile-find-dir]         . counsel-projectile-find-dir)
+	 ([remap projectile-switch-to-buffer] . counsel-projectile-switch-to-buffer)
+	 ([remap projectile-grep]             . counsel-projectile-grep)
+	 ([remap projectile-ag]               . counsel-projectile-ag)
+	 ([remap projectile-switch-project]   . counsel-projectile-switch-project))
+  :config
+  (counsel-projectile-mode 1)
+  )
+
 ;; 按键提示
 (use-package which-key
   :ensure t

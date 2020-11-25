@@ -24,3 +24,9 @@ Help to browse C/C++ code in Emacs
 1. C-]    ggtags-find-definition
 2. M-]    ggtags-find-reference
 3. F12    ggtags-update-tags
+
+# About Projectile/Counsel-projectile
+Find files in projects easily
+
+## Key bindings:
+1. F6     counsel-projectile-find-file
