@@ -17,5 +17,14 @@
   (org-bullets-bullet-list '("☯" "✿" "☢" "☀" "☭" "☛"))
   )
 
+;; 空闲时自动显示Agenda
+(use-package idle-org-agenda
+  :ensure t
+  :after org-agenda
+  :config
+  (setq idle-org-agenda-interval 300)
+  (idle-org-agenda-mode t)
+  )
+
 ;;;
 (provide 'orgmode-settings)
