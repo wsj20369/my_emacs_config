@@ -318,6 +318,11 @@
   (transwin--set-transparency 99)
   )
 
+;; Material风格, OrgMode很合适...
+(use-package material-theme
+  :ensure t
+  )
+
 ;; Markdown mode
 (use-package markdown-mode
   :ensure t)

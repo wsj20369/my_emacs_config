@@ -12,8 +12,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (misterioso)))
  '(org-agenda-files (quote ("f:/OrgMode/GTD.org")))
+ '(custom-enabled-themes (quote (material)))
  '(package-selected-packages
    (quote
     (helm smex json-mode vimrc-mode evil-nerd-commenter evil which-key youdao-dictionary rainbow-delimiters company use-package))))
