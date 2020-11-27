@@ -15,6 +15,9 @@
 ;; 各种插件
 (require 'plugins-settings)
 
+;; Theme & Color
+(require 'themes-settings)
+
 ;; 字体
 (require 'fonts-settings)
 

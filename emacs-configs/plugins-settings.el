@@ -8,7 +8,7 @@
     )
   )
 
-;; 如果不想用Evil, 把下面加入:disbled即可
+;; 如果不想用Evil, 在下面加入:disabled即可
 (use-package evil
   :ensure t
   :config
@@ -310,18 +310,6 @@
   :config
   (line-number-mode 1)
   (column-number-mode 0))
-
-;; 窗口透明度
-(use-package transwin
-  :ensure t
-  :config
-  (transwin--set-transparency 99)
-  )
-
-;; Material风格, OrgMode很合适...
-(use-package material-theme
-  :ensure t
-  )
 
 ;; Markdown mode
 (use-package markdown-mode
