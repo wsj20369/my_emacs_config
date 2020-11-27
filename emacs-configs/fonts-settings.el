@@ -21,12 +21,12 @@
    ;; Linux
    ((string-equal system-type "gnu/linux")
     (setq my-font-size 12)
-    '("Noto Sans Mono CJK SC" ;; Ubuntu上效果不错
+    '("Ubuntu Mono"
+      "Noto Sans Mono CJK SC" ;; Ubuntu上效果不错
       "Noto Mono"
       "FreeMono"
       "DejaVu Sans Mono"
-      "Consolas"
-      "Ubuntu Mono"))
+      "Consolas"))
    ;; MacOS
    ((string-equal system-type "darwin")
     (setq my-font-size 12)
