@@ -15,6 +15,9 @@
 ;; 各种插件
 (require 'plugins-settings)
 
+;; 字体
+(require 'fonts-settings)
+
 ;; OrgMode设定
 (require 'orgmode-settings)
 
