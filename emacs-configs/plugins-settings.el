@@ -78,14 +78,19 @@
   :ensure t
   :defer 1
   :after (ivy)
+  :init
+  (ivy-posframe-mode 1)
+  :custom
+  (ivy-posframe-parameters
+   `((left-fringe  . 0)
+     (right-fringe . 0)
+     (min-width    . 60)
+     (min-height   . ,ivy-height)
+     ;; (background-color   . "gray50")
+     (internal-border-width . 1)))
   :config
   (setq ivy-display-function #'ivy-posframe-display-at-point
 	ivy-fixed-height-minibuffer nil)
-  (setq ivy-posframe-parameters
-	`((min-width . 60)
-	  (min-height . ,ivy-height)
-	  (bg-color . red)
-	  (internal-border-width . 2)))
   (setq ivy-posframe-display-functions-alist
 	'((swiper              . ivy-display-function-fallback)
 	  (complete-symbol     . ivy-posframe-display-at-point)
