@@ -86,6 +86,7 @@
      (right-fringe . 0)
      (min-width    . 60)
      (min-height   . ,ivy-height)
+     (font         . ,(my-get-choosed-font))
      ;; (background-color   . "gray50")
      (internal-border-width . 1)))
   :config

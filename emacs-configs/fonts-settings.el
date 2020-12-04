@@ -9,6 +9,13 @@
 
 (setq my-default-font "System")
 
+(setq my-font-name-and-size nil)
+
+(defun my-get-choosed-font ()
+  "Get the choosed font."
+  (interactive)
+  my-font-name-and-size)
+
 (defun my-get-font-list ()
   "Get a font list according to Operating System."
   (cond

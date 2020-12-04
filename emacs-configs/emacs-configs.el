@@ -12,14 +12,14 @@
 ;; 基本设定
 (require 'basic-settings)
 
-;; 各种插件
-(require 'plugins-settings)
-
 ;; Theme & Color
 (require 'themes-settings)
 
 ;; 字体
 (require 'fonts-settings)
+
+;; 各种插件
+(require 'plugins-settings)
 
 ;; OrgMode设定
 (require 'orgmode-settings)
