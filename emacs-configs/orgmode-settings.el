@@ -31,5 +31,9 @@
 (org-toggle-inline-images t)
 (global-set-key (kbd "C-c t") 'org-redisplay-inline-images)
 
+;; 设定Tags的位置，不要太宽
+;; (setq org-tags-column -68)
+(setq org-tags-column -76)
+
 ;;;
 (provide 'orgmode-settings)
