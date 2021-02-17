@@ -26,5 +26,10 @@
   (idle-org-agenda-mode t)
   )
 
+;; 在线显示图片
+;; C-c t 重新显示图片
+(org-toggle-inline-images t)
+(global-set-key (kbd "C-c t") 'org-redisplay-inline-images)
+
 ;;;
 (provide 'orgmode-settings)
