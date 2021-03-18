@@ -21,6 +21,10 @@
 	      (define-key evil-motion-state-map (kbd "RET") 'evil-ret--do-xref-in-xref)
 	      (define-key evil-motion-state-map (kbd "<return>") 'evil-ret--do-xref-in-xref)
 	      ))
+  ;; Treat '_' as part of symbol instead of delimiter for evil command
+  (add-hook 'c-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'makefile-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'makefile-gmake-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
   )
 
 (use-package evil-nerd-commenter
