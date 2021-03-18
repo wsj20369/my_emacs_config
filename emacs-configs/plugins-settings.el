@@ -2,10 +2,13 @@
 ;; 这只是适用于Evil模式，因为Emacs本来就是设好的
 (defun evil-ret--do-xref-in-xref(&optional COUNT)
   (interactive)
-  (if (string= (buffer-name) "*xref*")
-      (xref-goto-xref COUNT)
-    (evil-ret COUNT)
-    )
+  (cond ((string= (buffer-name) "*xref*")
+	 (xref-goto-xref COUNT))
+	((string= (buffer-name) "*ggtags-global*")
+	 (compile-goto-error))  ;; Actually, Jumps to the xref location
+	(t
+	 (evil-ret COUNT))
+   )
   )
 
 ;; 如果不想用Evil, 在下面加入:disabled即可
