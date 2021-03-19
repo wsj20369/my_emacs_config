@@ -18,6 +18,9 @@
 ;; 字体
 (require 'fonts-settings)
 
+;; Programming
+(require 'programming-settings)
+
 ;; 各种插件
 (require 'plugins-settings)
 
