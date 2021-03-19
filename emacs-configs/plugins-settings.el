@@ -9,6 +9,14 @@
 (use-package evil-nerd-commenter
   :ensure t)
 
+;; Undotree
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  (setq evil-undo-system 'undo-tree)
+  )
+
 ;; Completer for Buffer data
 (use-package company
   :ensure t
