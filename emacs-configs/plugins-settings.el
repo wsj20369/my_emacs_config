@@ -260,7 +260,8 @@
   :ensure t
   :bind
   (("C-]" . ggtags-find-definition)
-   ("M-]" . ggtags-find-reference)
+   ("M-]" . ggtags-find-reference)  ;; Alt-]    find the caller...
+   ("M-c" . ggtags-find-reference)  ;; Alt-c to find the caller of function
    ([f12] . ggtags-update-tags))
   :config
   (add-hook 'c-mode-common-hook
