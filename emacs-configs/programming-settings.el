@@ -60,6 +60,12 @@
   (add-hook 'c-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
   (add-hook 'makefile-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
   (add-hook 'makefile-gmake-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'kconfig-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+  )
+
+;; Kconfig mode
+(use-package kconfig-mode
+  :ensure t
   )
 
 ;; GDB相关
