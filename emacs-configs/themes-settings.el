@@ -19,7 +19,9 @@
 (use-package transwin
   :ensure t
   :config
-  (transwin--set-transparency 99)
+  (when (display-graphic-p)
+    (transwin--set-transparency 99)
+    )
   )
 
 ;;;
