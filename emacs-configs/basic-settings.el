@@ -10,7 +10,7 @@
 ;; 行 高亮
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
-(set-face-background 'hl-line "blue")
+(set-face-background 'hl-line "darkblue")
 (set-face-foreground 'highlight "gray")
 ;; (set-face-foreground 'highlight nil)
 (set-face-background 'region "green")
