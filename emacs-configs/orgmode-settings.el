@@ -31,6 +31,9 @@
 (org-toggle-inline-images t)
 (global-set-key (kbd "C-c t") 'org-redisplay-inline-images)
 
+;; 设定图片的大小, 不要太大，也不要太小
+(setq org-image-actual-width '(600))
+
 ;; 设定Tags的位置，不要太宽
 ;; (setq org-tags-column -68)
 (setq org-tags-column -76)
