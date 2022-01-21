@@ -12,6 +12,9 @@
 ;; 基本设定
 (require 'basic-settings)
 
+;; Http Proxy
+;; (require 'http-proxy)
+
 ;; Theme & Color
 (require 'themes-settings)
 
