@@ -68,6 +68,9 @@
 (add-to-list 'display-buffer-alist
 	     `(".*helm.*" (display-buffer-at-bottom display-buffer-pop-up-window)))
 
+;; 修改PATH，增加执行路径
+(add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
+
 ;;;
 (provide 'basic-settings)
 
