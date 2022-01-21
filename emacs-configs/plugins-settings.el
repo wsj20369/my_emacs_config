@@ -105,7 +105,7 @@
 	 ([remap imenu]                    . counsel-imenu)
 	 ([remap recentf-open-files]       . counsel-recentf)
 	 ([remap org-capture]              . counsel-org-capture)
-	 ([remap swiper]                   . counsel-grep-or-swiper)
+	 ;; ([remap swiper]                   . counsel-grep-or-swiper)
 	 ([remap describe-face]            . counsel-describe-face)
 	 ([remap describe-function]        . counsel-describe-function)
 	 ([remap describe-variable]        . counsel-describe-variable))
