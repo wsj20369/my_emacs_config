@@ -1,9 +1,16 @@
 ;; 基本设定
 
+;; 编码默认为utf-8, Unix换行格式
+;; 改变当前buffer的编码：set-buffer-file-coding-system
+(setq-default buffer-file-coding-system 'utf-8-unix)
+(setq-default default-buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+
 ;; 行 高亮
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
-(set-face-background 'hl-line "blue")
+(set-face-background 'hl-line "darkblue")
 (set-face-foreground 'highlight "gray")
 ;; (set-face-foreground 'highlight nil)
 (set-face-background 'region "green")
